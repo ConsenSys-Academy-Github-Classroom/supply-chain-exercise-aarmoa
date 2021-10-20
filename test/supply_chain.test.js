@@ -7,7 +7,7 @@ contract("SupplyChain", function (accounts) {
   const [_owner, alice, bob] = accounts;
   const emptyAddress = "0x0000000000000000000000000000000000000000";
 
-  const price = "1000";
+  const price = 1000;
   const excessAmount = "2000";
   const name = "book";
 
@@ -157,7 +157,7 @@ contract("SupplyChain", function (accounts) {
       await instance.addItem(name, price, { from: alice });
 
       const result = await instance.fetchItem.call(0);
-
+      
       assert.equal(
         result[0],
         name,
